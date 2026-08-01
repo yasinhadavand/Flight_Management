@@ -1,56 +1,127 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="dQU_F6bwrai_4F6-iF-g">
-    <mxGraphModel dx="1043" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1227" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="fT988s8GL-ntYuNMUXrO-1" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-5" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-5" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;AIRLINE&lt;/div&gt;&amp;nbsp; PK  AirlineID&amp;nbsp;&lt;div&gt;&amp;nbsp; UQ  AirlineCode&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; Name&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; Country&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; Phone&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; Email&lt;/div&gt;" vertex="1">
           <mxGeometry height="120" width="180" x="40" y="70" as="geometry" />
         </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-2" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-6" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-20" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-6" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;AIRCRAFT&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK  AircraftID&lt;/div&gt;&lt;div&gt;&amp;nbsp; FK  AirlineID&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; UQ  RegistrationNumber&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Manufacturer&lt;/div&gt;&lt;div&gt;&amp;nbsp;Model&lt;/div&gt;&lt;div&gt;&amp;nbsp;Capacity&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;Status&lt;/div&gt;" vertex="1">
-          <mxGeometry height="130" width="180" x="40" y="250" as="geometry" />
+          <mxGeometry height="130" width="180" x="40" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-3" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-10" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-4" connectable="0" parent="fT988s8GL-ntYuNMUXrO-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="(DepartureAirportID)" vertex="1">
+          <mxGeometry relative="1" x="0.1615" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-6" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="mPFucIaQ4VDgRwhpBPyE-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-7" connectable="0" parent="fT988s8GL-ntYuNMUXrO-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="(ArrivalAirportID)" vertex="1">
+          <mxGeometry relative="1" x="-0.1946" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-10" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;AIRPORT&lt;/div&gt;&amp;nbsp;PK  AirportID&lt;div&gt;&amp;nbsp; UQ  IATA_Code&lt;/div&gt;&lt;div&gt;&amp;nbsp; Name&lt;/div&gt;&lt;div&gt;&amp;nbsp; City&lt;/div&gt;&lt;div&gt;&amp;nbsp; Country&lt;/div&gt;" vertex="1">
-          <mxGeometry height="120" width="180" x="370" y="70" as="geometry" />
+          <mxGeometry height="120" width="180" x="300" y="70" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-11" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;FLIGHT&lt;/div&gt;&amp;nbsp; PK  FlightID&lt;div&gt;&amp;nbsp; FK  AircraftID&lt;/div&gt;&lt;div&gt;&amp;nbsp; FK  DepartureAirportID&lt;/div&gt;&lt;div&gt;&amp;nbsp; FK  ArrivalAirportID&lt;/div&gt;&lt;div&gt;&amp;nbsp; UQ  FlightNumber&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;DepartureTime&lt;/div&gt;&lt;div&gt;&amp;nbsp; ArrivalTime&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;Status&lt;/div&gt;" vertex="1">
-          <mxGeometry height="140" width="180" x="360" y="260" as="geometry" />
+          <mxGeometry height="140" width="180" x="300" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-8" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-21" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-13">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-12" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;PASSENGER&lt;/div&gt;&amp;nbsp; PK PassengerID&lt;div&gt;&amp;nbsp; UQ PassportNumber&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;FirstName&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; LastName&lt;/div&gt;&lt;div&gt;&amp;nbsp; Country&lt;/div&gt;&lt;div&gt;&amp;nbsp; City&lt;/div&gt;&lt;div&gt;&amp;nbsp; DateOfBirth&lt;/div&gt;" vertex="1">
           <mxGeometry height="140" width="180" x="590" y="250" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-13" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PASSENGER_PHONE&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK/FK PassengerID&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK Phone&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="180" x="40" y="475" as="geometry" />
+          <mxGeometry height="60" width="180" x="830" y="240" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-14" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;BAGGAGE&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK/FK TicketID&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK BagNumber&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="180" x="50" y="670" as="geometry" />
+          <mxGeometry height="60" width="180" x="310" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-9" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-10" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-16">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-15" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;BOOKING&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PK BookingID&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; FK PassengerID&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&amp;nbsp;FK FlightID&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; BookingDate&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; Status&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="140" width="180" x="310" y="475" as="geometry" />
+          <mxGeometry height="140" width="180" x="590" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-11" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-14">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-16" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;TICKET&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK TicketID&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; FK BookingID&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; UQ TicketNumber&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; IssueDate&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; Class&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="140" width="180" x="570" y="475" as="geometry" />
+          <mxGeometry height="140" width="180" x="310" y="475" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-17" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PASSENGER_EMAIL&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;PK/FK PassengerID&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK Email&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="180" x="40" y="555" as="geometry" />
+          <mxGeometry height="60" width="180" x="830" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-14" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-15" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-16" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-21">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-18" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;EMPLOYEE&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK EmployeeID&lt;/div&gt;&lt;div&gt;&amp;nbsp; Name&lt;/div&gt;&lt;div&gt;&amp;nbsp; Phone&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="180" x="280" y="670" as="geometry" />
+          <mxGeometry height="70" width="180" x="660" y="685" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-19" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;PILOT&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PK/FK EmployeeID&amp;nbsp; &amp;nbsp; &amp;nbsp;LicenseNumber&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; FlightHours&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="180" x="530" y="670" as="geometry" />
+          <mxGeometry height="70" width="180" x="660" y="810" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-20" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CABINCREW&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PK/FK EmployeeID&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; Position&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; Language&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="180" x="50" y="770" as="geometry" />
+          <mxGeometry height="70" width="180" x="450" y="810" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-21" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;WORK_ON&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK/FK EmployeeID&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;PK/FK FlightID&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="180" x="310" y="770" as="geometry" />
+          <mxGeometry height="70" width="180" x="900" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-18" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-19" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-11">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-22" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;ASSIGNED_PILOT&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK/FK EmployeeID&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; PK/FK FlightID&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; PK/FK AircraftID&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="180" x="540" y="770" as="geometry" />
+          <mxGeometry height="70" width="180" x="660" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-13" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-11">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-23" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;SEAT&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PK/FK FlightID&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&amp;nbsp;PK SeatNumber&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; Availability&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="180" x="50" y="910" as="geometry" />
+          <mxGeometry height="70" width="180" x="40" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-17" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.607;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990.06" y="900" />
+              <mxPoint x="1130.06" y="900" />
+              <mxPoint x="1130.06" y="440" />
+              <mxPoint x="480.06" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fT988s8GL-ntYuNMUXrO-22" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.013;entryY=0.678;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-12">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
