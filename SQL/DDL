@@ -37,3 +37,169 @@ CREATE TABLE Passenger (
     City VARCHAR(100) NOT NULL,
     DateOfBirth DATE NOT NULL
 );
+CREATE TABLE Employee (
+    EmployeeID SERIAL PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Phone VARCHAR(20)
+);
+CREATE TABLE Flight (
+    FlightID SERIAL PRIMARY KEY,
+    AircraftID INT NOT NULL,
+    DepartureAirportID INT NOT NULL,
+    ArrivalAirportID INT NOT NULL,
+    FlightNumber VARCHAR(20) UNIQUE NOT NULL,
+    DepartureTime TIMESTAMP NOT NULL,
+    ArrivalTime TIMESTAMP NOT NULL,
+    Status VARCHAR(20) NOT NULL DEFAULT 'Scheduled'
+        CHECK (Status IN ('Scheduled', 'Delayed', 'Cancelled', 'Completed')),
+
+    CONSTRAINT fk_flight_aircraft
+        FOREIGN KEY (AircraftID)
+        REFERENCES Aircraft(AircraftID)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_departure_airport
+        FOREIGN KEY (DepartureAirportID)
+        REFERENCES Airport(AirportID),
+
+    CONSTRAINT fk_arrival_airport
+        FOREIGN KEY (ArrivalAirportID)
+        REFERENCES Airport(AirportID),
+
+    CONSTRAINT chk_flight_time
+        CHECK (ArrivalTime > DepartureTime)
+);
+CREATE TABLE Booking (
+    BookingID SERIAL PRIMARY KEY,
+    PassengerID INT NOT NULL,
+    FlightID INT NOT NULL,
+    BookingDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    Status VARCHAR(20) NOT NULL DEFAULT 'Pending'
+        CHECK (Status IN ('Pending', 'Confirmed', 'Cancelled')),
+
+    CONSTRAINT fk_booking_passenger
+        FOREIGN KEY (PassengerID)
+        REFERENCES Passenger(PassengerID)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_booking_flight
+        FOREIGN KEY (FlightID)
+        REFERENCES Flight(FlightID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Ticket (
+    TicketID SERIAL PRIMARY KEY,
+    BookingID INT UNIQUE NOT NULL,
+    TicketNumber VARCHAR(20) UNIQUE NOT NULL,
+    IssueDate DATE NOT NULL DEFAULT CURRENT_DATE,
+    Class VARCHAR(20) NOT NULL
+        CHECK (Class IN ('Economy', 'Business', 'First')),
+
+    CONSTRAINT fk_ticket_booking
+        FOREIGN KEY (BookingID)
+        REFERENCES Booking(BookingID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Pilot (
+    EmployeeID INT PRIMARY KEY,
+    LicenseNumber VARCHAR(30) UNIQUE NOT NULL,
+    FlightHours INT NOT NULL CHECK (FlightHours >= 0),
+
+    CONSTRAINT fk_pilot_employee
+        FOREIGN KEY (EmployeeID)
+        REFERENCES Employee(EmployeeID)
+        ON DELETE CASCADE
+);
+CREATE TABLE CabinCrew (
+    EmployeeID INT PRIMARY KEY,
+    Position VARCHAR(50) NOT NULL,
+    Language VARCHAR(50) NOT NULL,
+
+    CONSTRAINT fk_cabincrew_employee
+        FOREIGN KEY (EmployeeID)
+        REFERENCES Employee(EmployeeID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Seat (
+    FlightID INT NOT NULL,
+    SeatNumber VARCHAR(10) NOT NULL,
+    Availability BOOLEAN NOT NULL DEFAULT TRUE,
+
+    PRIMARY KEY (FlightID, SeatNumber),
+
+    CONSTRAINT fk_seat_flight
+        FOREIGN KEY (FlightID)
+        REFERENCES Flight(FlightID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Baggage (
+    TicketID INT NOT NULL,
+    BagNumber INT NOT NULL,
+
+    PRIMARY KEY (TicketID, BagNumber),
+
+    CONSTRAINT fk_baggage_ticket
+        FOREIGN KEY (TicketID)
+        REFERENCES Ticket(TicketID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Passenger_Phone (
+    PassengerID INT NOT NULL,
+    Phone VARCHAR(20) NOT NULL,
+
+    PRIMARY KEY (PassengerID, Phone),
+
+    CONSTRAINT fk_phone_passenger
+        FOREIGN KEY (PassengerID)
+        REFERENCES Passenger(PassengerID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Passenger_Email (
+    PassengerID INT NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+
+    PRIMARY KEY (PassengerID, Email),
+
+    CONSTRAINT fk_email_passenger
+        FOREIGN KEY (PassengerID)
+        REFERENCES Passenger(PassengerID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Work_On (
+    EmployeeID INT NOT NULL,
+    FlightID INT NOT NULL,
+
+    PRIMARY KEY (EmployeeID, FlightID),
+
+    CONSTRAINT fk_workon_employee
+        FOREIGN KEY (EmployeeID)
+        REFERENCES Employee(EmployeeID)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_workon_flight
+        FOREIGN KEY (FlightID)
+        REFERENCES Flight(FlightID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Assigned_Pilot (
+    EmployeeID INT NOT NULL,
+    FlightID INT NOT NULL,
+    AircraftID INT NOT NULL,
+
+    PRIMARY KEY (EmployeeID, FlightID, AircraftID),
+
+    CONSTRAINT fk_assignedpilot_pilot
+        FOREIGN KEY (EmployeeID)
+        REFERENCES Pilot(EmployeeID)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_assignedpilot_flight
+        FOREIGN KEY (FlightID)
+        REFERENCES Flight(FlightID)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_assignedpilot_aircraft
+        FOREIGN KEY (AircraftID)
+        REFERENCES Aircraft(AircraftID)
+        ON DELETE CASCADE
+);
