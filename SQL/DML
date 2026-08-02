@@ -1,1 +1,216 @@
+INSERT INTO Airline (AirlineCode, Name, Country, Phone, Email)
+VALUES
+('THY', 'Turkish Airlines', 'Turkey', '+90-212-4636363', 'info@thy.com'),
+('QTR', 'Qatar Airways', 'Qatar', '+974-4022-6000', 'info@qatarairways.com'),
+('UAE', 'Emirates', 'UAE', '+971-600-555555', 'info@emirates.com');
+
+SELECT * FROM Airline;    /// !!!!!!@@@ insert and run then take screenshot . repeat for all next @@@!!!!
+
+
+
+INSERT INTO Airport (IATA_Code, Name, City, Country)
+VALUES
+('IST', 'Istanbul Airport', 'Istanbul', 'Turkey'),
+('ESB', 'Esenboga Airport', 'Ankara', 'Turkey'),
+('DXB', 'Dubai International Airport', 'Dubai', 'UAE'),
+('DOH', 'Hamad International Airport', 'Doha', 'Qatar'),
+('ECN', 'Ercan International Airport', 'Nicosia', 'Northern Cyprus');
+
+INSERT INTO Aircraft
+(AirlineID, RegistrationNumber, Manufacturer, Model, Capacity, Status)
+VALUES
+(1, 'TC-JAA', 'Boeing', '737-800', 189, 'Active'),
+(1, 'TC-LAB', 'Airbus', 'A321', 220, 'Active'),
+(2, 'A7-ABC', 'Airbus', 'A350', 320, 'Active'),
+(3, 'A6-XYZ', 'Boeing', '777-300ER', 396, 'Maintenance');
+
+INSERT INTO Passenger
+(PassportNumber, FirstName, LastName, Country, City, DateOfBirth)
+VALUES
+('TR123456', 'Ahmet', 'Yilmaz', 'Turkey', 'Istanbul', '1995-04-15'),
+('CY987654', 'Yasin', 'Hadavand', 'Northern Cyprus', 'Nicosia', '2002-02-07'),
+('QA555888', 'Omar', 'Ali', 'Qatar', 'Doha', '1998-09-12'),
+('AE222111', 'Sara', 'Ahmed', 'UAE', 'Dubai', '1997-06-25'),
+('TR333999', 'Mehmet', 'Demir', 'Turkey', 'Ankara', '1990-11-08');
+
+INSERT INTO Employee
+(Name, Phone)
+VALUES
+('Ali Can', '+90-555-111111'),
+('Fatma Kaya', '+90-555-222222'),
+('John Smith', '+44-777-333333'),
+('Emily Brown', '+1-555-444444'),
+('Mohammed Hassan', '+974-555555');
+
+INSERT INTO Flight
+(AircraftID, DepartureAirportID, ArrivalAirportID,
+ FlightNumber, DepartureTime, ArrivalTime, Status)
+VALUES
+(1, 1, 3, 'TK100', '2026-08-10 08:00', '2026-08-10 12:30', 'Scheduled'),
+
+(2, 2, 5, 'TK205', '2026-08-11 10:00', '2026-08-11 11:30', 'Scheduled'),
+
+(3, 4, 1, 'QR450', '2026-08-12 09:15', '2026-08-12 13:45', 'Delayed'),
+
+(4, 3, 2, 'EK320', '2026-08-13 15:00', '2026-08-13 19:00', 'Completed');
+
+INSERT INTO Pilot
+(EmployeeID, LicenseNumber, FlightHours)
+VALUES
+(1, 'LIC1001', 4500),
+(2, 'LIC1002', 6200);
+
+INSERT INTO CabinCrew
+(EmployeeID, Position, Language)
+VALUES
+(3, 'Senior Cabin Crew', 'English'),
+(4, 'Cabin Crew', 'Arabic'),
+(5, 'Cabin Crew', 'Turkish');
+
+INSERT INTO Booking
+(PassengerID, FlightID, BookingDate, Status)
+VALUES
+(1, 1, CURRENT_TIMESTAMP, 'Confirmed'),
+(2, 2, CURRENT_TIMESTAMP, 'Pending'),
+(3, 3, CURRENT_TIMESTAMP, 'Confirmed'),
+(4, 1, CURRENT_TIMESTAMP, 'Cancelled'),
+(5, 4, CURRENT_TIMESTAMP, 'Confirmed');
+
+INSERT INTO Ticket
+(BookingID, TicketNumber, IssueDate, Class)
+VALUES
+(1, 'TKT1001', CURRENT_DATE, 'Economy'),
+(2, 'TKT1002', CURRENT_DATE, 'Business'),
+(3, 'TKT1003', CURRENT_DATE, 'Economy'),
+(4, 'TKT1004', CURRENT_DATE, 'First'),
+(5, 'TKT1005', CURRENT_DATE, 'Business');
+
+INSERT INTO Seat
+(FlightID, SeatNumber, Availability)
+VALUES
+(1, '1A', TRUE),
+(1, '1B', FALSE),
+(2, '2A', TRUE),
+(2, '2B', TRUE),
+(3, '3A', FALSE),
+(4, '4A', TRUE);
+
+INSERT INTO Baggage
+(TicketID, BagNumber)
+VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1);
+
+INSERT INTO Passenger_Phone
+(PassengerID, Phone)
+VALUES
+(1, '+90555111111'),
+(2, '+90555222222'),
+(3, '+97455123456'),
+(4, '+971501112233'),
+(5, '+90555333333');
+
+INSERT INTO Passenger_Email
+(PassengerID, Email)
+VALUES
+(1, 'ahmet@gmail.com'),
+(2, 'yasin@gmail.com'),
+(3, 'omar@gmail.com'),
+(4, 'sara@gmail.com'),
+(5, 'mehmet@gmail.com');
+
+INSERT INTO Work_On
+(EmployeeID, FlightID)
+VALUES
+(1,1),
+(2,1),
+(3,1),
+(4,2),
+(5,3),
+(3,4);
+
+INSERT INTO Assigned_Pilot
+(EmployeeID, FlightID, AircraftID)
+VALUES
+(1,1,1),
+(2,2,2),
+(1,3,3),
+(2,4,4);
+--------------------------------------------------------------------------------------------------------------------------
+UPDATE Flight
+SET Status = 'Completed'
+WHERE FlightID = 1;
+
+SELECT * FROM Flight; //update and run then take screenshot . repeat for all next @@@!!!!
+
+
+UPDATE Aircraft
+SET Status = 'Maintenance'
+WHERE AircraftID = 1;
+
+
+UPDATE Booking
+SET Status = 'Confirmed'
+WHERE BookingID = 2;
+
+UPDATE Seat
+SET Availability = FALSE
+WHERE FlightID = 2
+AND SeatNumber = '2A';
+
+DELETE FROM Baggage
+WHERE TicketID = 1
+AND BagNumber = 2;
+
+DELETE FROM Passenger_Phone
+WHERE PassengerID = 5;
+
+DELETE FROM Work_On
+WHERE EmployeeID = 3
+AND FlightID = 4;
+ 
+
+INSERT INTO Passenger_Phone (PassengerID, Phone)
+VALUES
+(1, '+90555444444');
+
+INSERT INTO Passenger_Email (PassengerID, Email)
+VALUES
+(2, 'yasin.student@ciu.edu.tr');
+
+
+UPDATE Passenger
+SET City = 'Izmir'
+WHERE PassengerID = 1;
+
+UPDATE Ticket
+SET Class = 'First'
+WHERE TicketID = 3;
+
+UPDATE Employee
+SET Phone = '+90-555-999999'
+WHERE EmployeeID = 2;
+
+
+DELETE FROM Passenger_Email
+WHERE PassengerID = 4;
+
+DELETE FROM Seat
+WHERE FlightID = 4
+AND SeatNumber = '4A';
+
+-- Display updated tables
+SELECT * FROM Passenger;
+SELECT * FROM Ticket;
+SELECT * FROM Employee;
+SELECT * FROM Passenger_Email;
+SELECT * FROM Seat;
+
+
+
+
 
