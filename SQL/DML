@@ -4,7 +4,7 @@ VALUES
 ('QTR', 'Qatar Airways', 'Qatar', '+974-4022-6000', 'info@qatarairways.com'),
 ('UAE', 'Emirates', 'UAE', '+971-600-555555', 'info@emirates.com');
 
-SELECT * FROM Airline;    /// !!!!!!@@@ insert and run then take screenshot . repeat for all next @@@!!!!
+SELECT * FROM Airline;    
 
 
 
@@ -145,7 +145,7 @@ UPDATE Flight
 SET Status = 'Completed'
 WHERE FlightID = 1;
 
-SELECT * FROM Flight; //update and run then take screenshot . repeat for all next @@@!!!!
+SELECT * FROM Flight; 
 
 
 UPDATE Aircraft
