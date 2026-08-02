@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="dQU_F6bwrai_4F6-iF-g">
-    <mxGraphModel dx="1896" dy="958" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="614" dy="310" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -47,7 +47,7 @@
         <mxCell id="fT988s8GL-ntYuNMUXrO-21" edge="1" parent="1" source="mPFucIaQ4VDgRwhpBPyE-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="mPFucIaQ4VDgRwhpBPyE-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="mPFucIaQ4VDgRwhpBPyE-12" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;PASSENGER&lt;/div&gt;&amp;nbsp; PK PassengerID&lt;div&gt;&amp;nbsp; UQ PassportNumber&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;FirstName&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; LastName&lt;/div&gt;&lt;div&gt;&amp;nbsp; Country&lt;/div&gt;&lt;div&gt;&amp;nbsp; City&lt;/div&gt;&lt;div&gt;&amp;nbsp; DateOfBirth&lt;/div&gt;" vertex="1">
+        <mxCell id="mPFucIaQ4VDgRwhpBPyE-12" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;PASSENGER&lt;/div&gt;&amp;nbsp; PK PassengerID&lt;div&gt;&amp;nbsp; UQ PassportNumber&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;F_Name&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; L_Name&lt;/div&gt;&lt;div&gt;&amp;nbsp; Country&lt;/div&gt;&lt;div&gt;&amp;nbsp; City&lt;/div&gt;&lt;div&gt;&amp;nbsp; DateOfBirth&lt;/div&gt;" vertex="1">
           <mxGeometry height="140" width="180" x="590" y="250" as="geometry" />
         </mxCell>
         <mxCell id="mPFucIaQ4VDgRwhpBPyE-13" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PASSENGER_PHONE&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK/FK PassengerID&lt;/div&gt;&lt;div&gt;&amp;nbsp; PK Phone&lt;/div&gt;" vertex="1">
