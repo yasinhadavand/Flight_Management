@@ -1,1 +1,39 @@
+CREATE TABLE Airline (
+    AirlineID SERIAL PRIMARY KEY,
+    AirlineCode VARCHAR(10) UNIQUE NOT NULL,
+    Name VARCHAR(100) NOT NULL,
+    Country VARCHAR(100) NOT NULL,
+    Phone VARCHAR(20),
+    Email VARCHAR(100) UNIQUE
+);
+CREATE TABLE Airport (
+    AirportID SERIAL PRIMARY KEY,
+    IATA_Code VARCHAR(5) UNIQUE NOT NULL,
+    Name VARCHAR(100) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    Country VARCHAR(100) NOT NULL
+);
+CREATE TABLE Aircraft (
+    AircraftID SERIAL PRIMARY KEY,
+    AirlineID INT NOT NULL,
+    RegistrationNumber VARCHAR(20) UNIQUE NOT NULL,
+    Manufacturer VARCHAR(50) NOT NULL,
+    Model VARCHAR(50) NOT NULL,
+    Capacity INT NOT NULL CHECK (Capacity > 0),
+    Status VARCHAR(20) NOT NULL DEFAULT 'Active'
+        CHECK (Status IN ('Active', 'Maintenance', 'Retired')),
 
+    CONSTRAINT fk_aircraft_airline
+        FOREIGN KEY (AirlineID)
+        REFERENCES Airline(AirlineID)
+        ON DELETE CASCADE
+);
+CREATE TABLE Passenger (
+    PassengerID SERIAL PRIMARY KEY,
+    PassportNumber VARCHAR(20) UNIQUE NOT NULL,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Country VARCHAR(100) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    DateOfBirth DATE NOT NULL
+);
