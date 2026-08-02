@@ -1,1 +1,175 @@
+-- ==========================================
+-- 1. BASIC / SINGLE-TABLE QUERIES
+-- ==========================================
 
+-- 1. Retrieve all passengers registered in the database
+SELECT * FROM Passenger;
+
+-- 2. Find all aircraft with a passenger capacity greater than 200
+SELECT Aircraft_id, RegistrationNumber, Model, Capacity 
+FROM Aircraft 
+WHERE Capacity > 200;
+
+-- 3. Get all scheduled or active flights
+SELECT FlightNumber, DepartureTime, ArrivalTime, Status 
+FROM Flight 
+WHERE Status = 'Scheduled';
+
+-- 4. List all airports located in a specific country (e.g., 'USA')
+SELECT Name, City, IATA_Code 
+FROM Airport 
+WHERE Country = 'USA';
+
+-- 5. Find all bookings made on a specific date
+SELECT Booking_Id, Passenger_id, Status 
+FROM Booking 
+WHERE Bookingdate = '2026-03-15';
+
+-- 6. List all pilots who have logged more than 1,000 flight hours
+SELECT Employee_Id, LicenseNumber, FlighHours 
+FROM Pilot 
+WHERE FlighHours > 1000;
+
+-- 7. Retrieve all available seats for a specific flight
+SELECT SeatNumber 
+FROM Seat 
+WHERE Flight_Id = 101 AND Availability = TRUE;
+
+-- 8. Find cabin crew members who speak 'Spanish'
+SELECT Employee_Id, Position, Language 
+FROM CabinCrew 
+WHERE Language = 'Spanish';
+
+
+-- ==========================================
+-- 2. INTERMEDIATE / MULTI-TABLE JOINS & AGGREGATIONS
+-- ==========================================
+
+-- 9. Get all bookings made by passengers, including passenger names
+SELECT P.Passenger_id, P.F_Name, P.L_Name, B.Booking_Id, B.Bookingdate, B.Status
+FROM Passenger P
+JOIN Booking B ON P.Passenger_id = B.Passenger_id;
+
+-- 10. Find departure and arrival airport details for every flight
+SELECT F.FlightNumber, 
+       Dep.Name AS Departure_Airport, 
+       Arr.Name AS Arrival_Airport
+FROM Flight F
+JOIN Airport Dep ON F.Departs_from_Airport_Id = Dep.Airport_id
+JOIN Airport Arr ON F.Arrives_at_Airport_Id = Arr.Airport_id;
+
+-- 11. List all flights operated by a specific airline (e.g., 'Air Canada')
+SELECT F.FlightNumber, F.DepartureTime, A.Name AS Airline_Name
+FROM Flight F
+JOIN Aircraft AC ON F.Aircraft_id = AC.Aircraft_id
+JOIN AirLine A ON AC.Airline_id = A.Airline_id
+WHERE A.Name = 'Air Canada';
+
+-- 12. Find tickets and their associated total baggage count
+SELECT T.TicketNumber, T.Class, COUNT(Bg.BagNumber) AS Total_Baggage
+FROM Ticket T
+LEFT JOIN Baggage Bg ON T.Ticket_Id = Bg.Ticket_Id
+GROUP BY T.TicketNumber, T.Class;
+
+-- 13. Count the total number of flights operated by each aircraft
+SELECT Aircraft_id, COUNT(Flight_Id) AS Total_Flights
+FROM Flight
+GROUP BY Aircraft_id;
+
+-- 14. Retrieve pilot details combined with general employee information
+SELECT E.Employee_Id, E.Name, E.Phone, P.LicenseNumber, P.FlighHours
+FROM Employee E
+JOIN Pilot P ON E.Employee_Id = P.Employee_Id;
+
+-- 15. Calculate the total number of bookings made per passenger
+SELECT P.Passenger_id, P.F_Name, P.L_Name, COUNT(B.Booking_Id) AS Total_Bookings
+FROM Passenger P
+LEFT JOIN Booking B ON P.Passenger_id = B.Passenger_id
+GROUP BY P.Passenger_id, P.F_Name, P.L_Name;
+
+-- 16. Retrieve ticket details generated for a specific booking ID
+SELECT B.Booking_Id, T.TicketNumber, T.Class, T.IssueDate
+FROM Booking B
+JOIN Ticket T ON B.Booking_Id = T.Booking_Id
+WHERE B.Booking_Id = 501;
+
+-- 17. Count total cabin crew staff grouped by position
+SELECT Position, COUNT(Employee_Id) AS Total_Staff
+FROM CabinCrew
+GROUP BY Position;
+
+
+-- ==========================================
+-- 3. ADVANCED / COMPLEX JOINS, SUBQUERIES & ANALYTICS
+-- ==========================================
+
+-- 18. List complete flight itinerary connecting passenger, flight, aircraft, and airline
+SELECT P.F_Name, P.L_Name, F.FlightNumber, AL.Name AS Airline, AC.Model
+FROM Passenger P
+JOIN Booking B ON P.Passenger_id = B.Passenger_id
+JOIN Ticket T ON B.Booking_Id = T.Booking_Id
+JOIN Flight F ON F.Flight_Id = B.Flight_Id
+JOIN Aircraft AC ON F.Aircraft_id = AC.Aircraft_id
+JOIN AirLine AL ON AC.Airline_id = AL.Airline_id;
+
+-- 19. Find all personnel (pilots and cabin crew) assigned to work on a specific flight
+SELECT E.Employee_Id, E.Name, 'Pilot' AS Role
+FROM Employee E
+JOIN Pilot P ON E.Employee_Id = P.Employee_Id
+JOIN Work_On W ON E.Employee_Id = W.Employee_Id
+WHERE W.Flight_Id = 101
+
+UNION
+
+SELECT E.Employee_Id, E.Name, 'Cabin Crew' AS Role
+FROM Employee E
+JOIN CabinCrew CC ON E.Employee_Id = CC.Employee_Id
+JOIN Work_On W ON E.Employee_Id = W.Employee_Id
+WHERE W.Flight_Id = 101;
+
+-- 20. Find the airline that owns the highest number of aircraft
+SELECT AL.Name, COUNT(AC.Aircraft_id) AS Total_Aircrafts
+FROM AirLine AL
+JOIN Aircraft AC ON AL.Airline_id = AC.Airline_id
+GROUP BY AL.Airline_id, AL.Name
+ORDER BY Total_Aircrafts DESC
+LIMIT 1;
+
+-- 21. Identify flights where booked seat count equals total capacity (Fully Booked)
+SELECT F.Flight_Id, F.FlightNumber, AC.Capacity
+FROM Flight F
+JOIN Aircraft AC ON F.Aircraft_id = AC.Aircraft_id
+JOIN Seat S ON F.Flight_Id = S.Flight_Id
+WHERE S.Availability = FALSE
+GROUP BY F.Flight_Id, F.FlightNumber, AC.Capacity
+HAVING COUNT(S.SeatNumber) = AC.Capacity;
+
+-- 22. Find all unique passengers who have booked tickets in 'Business' class
+SELECT DISTINCT P.Passenger_id, P.F_Name, P.L_Name, P.Email
+FROM Passenger P
+JOIN Booking B ON P.Passenger_id = B.Passenger_id
+JOIN Ticket T ON B.Booking_Id = T.Booking_Id
+WHERE T.Class = 'Business';
+
+-- 23. Find airports handling more than 50 departing flights
+SELECT AP.Name, AP.IATA_Code, COUNT(F.Flight_Id) AS Total_Departures
+FROM Airport AP
+JOIN Flight F ON AP.Airport_id = F.Departs_from_Airport_Id
+GROUP BY AP.Airport_id, AP.Name, AP.IATA_Code
+HAVING COUNT(F.Flight_Id) > 50;
+
+-- 24. Find passengers traveling with more than 2 pieces of baggage
+SELECT P.Passenger_id, P.F_Name, P.L_Name, COUNT(BG.BagNumber) AS Total_Bags
+FROM Passenger P
+JOIN Booking B ON P.Passenger_id = B.Passenger_id
+JOIN Ticket T ON B.Booking_Id = T.Booking_Id
+JOIN Baggage BG ON T.Ticket_Id = BG.Ticket_Id
+GROUP BY P.Passenger_id, P.F_Name, P.L_Name
+HAVING COUNT(BG.BagNumber) > 2;
+
+-- 25. Calculate the average flight duration per airline
+SELECT AL.Name AS Airline_Name, AVG(F.Duration) AS Avg_Flight_Duration
+FROM AirLine AL
+JOIN Aircraft AC ON AL.Airline_id = AC.Airline_id
+JOIN Flight F ON AC.Aircraft_id = F.Aircraft_id
+GROUP BY AL.Airline_id, AL.Name;
