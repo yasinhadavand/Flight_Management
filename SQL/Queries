@@ -161,21 +161,19 @@ FROM Booking b
 WHERE b.PassengerID=p.PassengerID
 );
 
-SELECT *
-FROM Aircraft
-WHERE Capacity >= ALL
-(
-SELECT Capacity
-FROM Aircraft
-WHERE Status='Active'
-);
+SELECT
+    Status,
+    COUNT(*) AS TotalFlights
+FROM Flight
+GROUP BY Status
+HAVING COUNT(*) >= 1;
 
-SELECT *
-FROM Aircraft
-WHERE Capacity > ANY
-(
-SELECT Capacity
-FROM Aircraft
-WHERE Status='Maintenance'
-);
+SELECT
+    LOWER(FirstName) AS FirstName,
+    LOWER(LastName) AS LastName
+FROM Passenger;
+
+SELECT
+    SUM(Capacity) AS TotalCapacity
+FROM Aircraft;
 
