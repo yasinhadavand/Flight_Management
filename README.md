@@ -1,26 +1,48 @@
 # Flight Management System
 
-CMPE343 - Database Management Systems and Programming I
+## Database Management Systems and Programming I - Term Project
 
-## Project Description
+## Course Instructor
 
-implements a Flight Management Database using PostgreSQL on Supabase.
+Prof. Dr. Melike Şah Direkoğlu
 
-## Team Members
-- YASIN HADAVAND
-- Adam Elaidi
-- Mustapha El Rifai
+This project is a Flight Management System database developed as part of the Database Management Systems and Programming I course at Cyprus International University.
 
-## Project Structure
-- ER Diagram
-- DDL
-- DML
-- SQL Queries
-- Report
+## Technologies Used
 
-## Technologies
+- PostgreSQL
 - Supabase
-- SQL
 - GitHub
+- Draw.io
 
+## Project Contents
+
+- Entity Relationship Diagram (ER Diagram)
+- Relational Model
+- Data Definition Language (DDL)
+- Data Manipulation Language (DML)
+- SQL Queries
+
+## Repository Structure
+
+```
+Flight_Management/
+│
+├── ERD/
+│   ├── ER_Diagram.pdf
+│   └── Relational_Model.pdf
+│
+├── SQL/
+│   ├── DDL.sql
+│   ├── DML.sql
+│   └── Queries.sql
+│
+└── README.md
+```
+
+## Group Members
+
+- Yasin Hadavand (22117727)
+- Mustapha El Rifai (22305672)
+- Adam Elaidi (22217322)
 
