@@ -177,3 +177,12 @@ SELECT
     SUM(Capacity) AS TotalCapacity
 FROM Aircraft;
 
+SELECT 
+FROM Emploee
+WHERE NOT employeeid = 1;
+
+
+
+
+
+
