@@ -181,6 +181,9 @@ SELECT
 FROM Emploee
 WHERE NOT employeeid = 1;
 
+SELECT 
+FROM Passenger 
+ORDER BY firstname ; 
 
 
 
