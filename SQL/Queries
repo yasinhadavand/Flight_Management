@@ -94,7 +94,9 @@ WHERE AircraftID IN
     WHERE Capacity > 200
 );
 
-
+SELECT AircraftID, Model, Capacity
+FROM Aircraft
+ORDER BY Capacity DESC;
 
 SELECT
     p.FirstName,
