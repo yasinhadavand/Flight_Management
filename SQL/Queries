@@ -190,6 +190,15 @@ SELECT
 FROM Passenger 
 ORDER BY firstname ; 
 
+SELECT
+    b.BookingID,
+    b.BookingDate,
+    f.FlightNumber,
+    b.Status
+FROM Booking b
+JOIN Flight f
+ON b.FlightID = f.FlightID;
+
 SELECT FlightNumber, Status
 FROM Flight
 WHERE Status = 'Completed';
