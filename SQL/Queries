@@ -17,6 +17,9 @@ ON f.AircraftID = ac.AircraftID
 JOIN Airline a
 ON ac.AirlineID = a.AirlineID;
 
+SELECT COUNT(*) AS TotalPassengers
+FROM Passenger;
+
 
 SELECT
     p.FirstName,
