@@ -185,7 +185,9 @@ SELECT
 FROM Passenger 
 ORDER BY firstname ; 
 
-
+SELECT FlightNumber, Status
+FROM Flight
+WHERE Status = 'Completed';
 
 
 
