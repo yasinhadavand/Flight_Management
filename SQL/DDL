@@ -203,3 +203,8 @@ CREATE TABLE Assigned_Pilot (
         REFERENCES Aircraft(AircraftID)
         ON DELETE CASCADE
 );
+SELECT
+    Status,
+    COUNT(*) AS TotalBookings
+FROM Booking
+GROUP BY Status;
