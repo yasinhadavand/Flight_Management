@@ -208,3 +208,11 @@ SELECT
     COUNT(*) AS TotalBookings
 FROM Booking
 GROUP BY Status;
+
+SELECT
+    e.Name,
+    p.LicenseNumber,
+    p.FlightHours
+FROM Employee e
+JOIN Pilot p
+ON e.EmployeeID = p.EmployeeID;
