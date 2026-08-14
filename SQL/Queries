@@ -210,4 +210,11 @@ SELECT
 FROM Airport
 ORDER BY City ASC;
 
-
+SELECT
+    ac.RegistrationNumber,
+    ac.Model,
+    ac.Capacity,
+    a.Name AS Airline
+FROM Aircraft ac
+JOIN Airline a
+ON ac.AirlineID = a.AirlineID;
