@@ -203,5 +203,11 @@ SELECT FlightNumber, Status
 FROM Flight
 WHERE Status = 'Completed';
 
+SELECT
+    Name,
+    City,
+    Country
+FROM Airport
+ORDER BY City ASC;
 
 
