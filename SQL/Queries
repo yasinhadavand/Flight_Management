@@ -225,3 +225,9 @@ SELECT
     Email,
     Phone
 FROM Passenger;
+SELECT
+    Name,
+    Email,
+    Phone
+FROM Airline
+ORDER BY Name ASC;
