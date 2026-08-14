@@ -218,3 +218,10 @@ SELECT
 FROM Aircraft ac
 JOIN Airline a
 ON ac.AirlineID = a.AirlineID;
+
+SELECT
+    FirstName,
+    LastName,
+    Email,
+    Phone
+FROM Passenger;
