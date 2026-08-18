@@ -220,6 +220,13 @@ JOIN Airline a
 ON ac.AirlineID = a.AirlineID;
 
 SELECT
+    AircraftID,
+    Model,
+    Capacity
+FROM Aircraft
+WHERE Capacity > 300;
+
+SELECT
     FirstName,
     LastName,
     Email,
