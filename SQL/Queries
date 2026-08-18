@@ -30,6 +30,16 @@ FROM Passenger p
 JOIN Booking b
 ON p.PassengerID = b.PassengerID;
 
+SELECT
+    p.FirstName,
+    p.LastName,
+    b.BookingID,
+    b.BookingDate,
+    b.Status
+FROM Passenger p
+JOIN Booking b
+ON p.PassengerID = b.PassengerID;
+
 
 SELECT
     p.FirstName,
