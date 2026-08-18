@@ -80,6 +80,15 @@ SELECT
 AVG(Capacity) AS AverageCapacity
 FROM Aircraft;
 
+SELECT
+    t.TicketNumber,
+    t.Class,
+    b.BookingID,
+    b.Status
+FROM Ticket t
+JOIN Booking b
+ON t.BookingID = b.BookingID;
+
 
 
 SELECT
