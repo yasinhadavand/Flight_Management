@@ -42,6 +42,13 @@ ON p.PassengerID = b.PassengerID
 JOIN Ticket t
 ON b.BookingID = t.BookingID;
 
+SELECT
+    FlightNumber,
+    Status,
+    AircraftID
+FROM Flight
+ORDER BY FlightNumber ASC;
+
 
 SELECT COUNT(*) AS TotalFlights
 FROM Flight;
